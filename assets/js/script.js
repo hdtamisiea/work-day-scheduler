@@ -16,7 +16,13 @@ var hourList = [
 $("#currentDay").text("Current date and time: " + date + timeNow);
 
 // Set up a row for each hour. hourList is variable list. hourLabel is the time displayed to the left of each hourRow
-
+hourList.forEach(function (createRow, index) {
+    var hourAssigned = createRow.time;
+    var rowColor = setColor(hourAssigned);
+    var row =
+    "<div class='time-block' id='" + index + "'><div class='row no-gutters input-group'><div class='col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3'>" + hourAssigned + "</div><textarea class='form-control " + rowColor + "'>" + createRow.event + "</textarea><div class='col-sm col-lg-1 input-group-append'><button class='saveBtn btn-block' type='submit'><i class='fas fa-save'></i></butto></div></div></div>";
+    $(".container").append(row);
+});
 
 // Set up color of row using classes provided in starter code CSS
 function setColor(time) {
