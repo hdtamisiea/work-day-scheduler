@@ -1,6 +1,7 @@
 var date = moment().format('dddd,   MMMM Do, YYYY  ');
 var timeNow = moment().format('h:mm:ss a');
 
+// List of hours to include on schedule - added extra hours so I could see if colors were working - originally stopped at 5pm
 var hourList = [
     { time: "9 AM", event: "" },
     { time: "10 AM", event: "" },
@@ -11,6 +12,9 @@ var hourList = [
     { time: "3 PM", event: "" },
     { time: "4 PM", event: "" },
     { time: "5 PM", event: "" },
+    { time: "6 PM", event: "" },
+    { time: "7 PM", event: "" },
+    { time: "8 PM", event: "" },
 ];
 
 $("#currentDay").text("Current date and time: " + date + timeNow);
@@ -36,3 +40,6 @@ function setColor(time) {
         return "present";
     }
 }
+
+setColor();
+
