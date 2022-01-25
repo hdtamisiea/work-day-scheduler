@@ -2,6 +2,7 @@
 var date = moment().format('dddd,   MMMM Do, YYYY  ');
 var timeNow = moment().format('h:mm:ss a');
 
+// get current date/time when page loads
 $("#currentDay").text("Current date and time: " + date + timeNow);
 
 // List of hours to include on schedule - added extra hours so I could see if colors were working - originally stopped at 5pm
@@ -19,8 +20,6 @@ var hourList = [
     { time: "7 PM", event: "" },
     { time: "8 PM", event: "" },
 ];
-
-
 
 // Set up color of row using classes provided in starter code CSS
 function setColor(time) {
@@ -48,7 +47,7 @@ hourList.forEach(function (createRow, index) {
     var hourAssigned = createRow.time;
     var rowColor = setColor(hourAssigned);
     var row =
-    "<div class='time-block' id='" + index + "'><div class='row no-gutters input-group'><div class='col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3'>" + hourAssigned + "</div><textarea class='form-control " + rowColor + "'>" + createRow.event + "</textarea><div class='col-sm col-lg-1 input-group-append'><button class='saveBtn btn-block' type='submit'><i class='fas fa-save'></i></butto></div></div></div>";
+    "<div class='time-block' id='" + index + "'><div class='row input-group no-gutters '><div class='hour col-sm-1 col-md-1 col-lg-1 input-group-prepend pr-3 pt-3'>" + hourAssigned + "</div><textarea class='form-control " + rowColor + "'>" + createRow.event + "</textarea><div class='col-sm-1 col-md-1 col-lg-1 input-group-append'><button class='saveBtn btn-block' type='submit'><i class='fas fa-save'></i></button></div></div></div>";
     $(".container").append(row);
 });
 
