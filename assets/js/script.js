@@ -47,7 +47,7 @@ hourList.forEach(function (createRow, index) {
     var hourAssigned = createRow.time;
     var rowColor = setColor(hourAssigned);
     var row =
-    "<div class='time-block' id='" + index + "'><div class='row input-group no-gutters '><div class='hour col-sm-1 col-md-1 col-lg-1 input-group-prepend pr-3 pt-3'>" + hourAssigned + "</div><textarea class='form-control " + rowColor + "'>" + createRow.event + "</textarea><div class='col-sm-1 col-md-1 col-lg-1 input-group-append'><button class='saveBtn btn-block' type='submit'><i class='fas fa-save'></i></button></div></div></div>";
+    "<div class='time-block' id='" + index + "'><div class='row no-gutters input-group'><div class='hour col-sm-1 col-md-1 col-lg-1 input-group-prepend pr-3 pt-3'>" + hourAssigned + "</div><textarea class='form-control " + rowColor + "'>" + createRow.event + "</textarea><div class='col-sm-1 col-md-1 col-lg-1 input-group-append description'><button class='saveBtn btn-block' type='submit'><i class='fas fa-save'></i></button></div></div></div>";
     $(".container").append(row);
 });
 
